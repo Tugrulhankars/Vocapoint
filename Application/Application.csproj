@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Auth\" />
+    <Folder Include="Features\User\" />
+    <Folder Include="Features\Question\Dtos\" />
+    <Folder Include="Features\Question\Rules\" />
+    <Folder Include="Features\Question\Profiles\" />
+    <Folder Include="Features\Word\Commands\Update\" />
+    <Folder Include="Features\Word\Dtos\" />
+    <Folder Include="Features\Word\Queries\GetAllByWordLevel\" />
+    <Folder Include="Features\Word\Rules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>
