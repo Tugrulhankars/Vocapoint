@@ -1,5 +1,4 @@
-image: microsoft/dotnet:latest
-
+image: mcr.microsoft.com/dotnet/sdk:8.0 
 
 stages:          # List of stages for jobs, and their order of execution
   - build
