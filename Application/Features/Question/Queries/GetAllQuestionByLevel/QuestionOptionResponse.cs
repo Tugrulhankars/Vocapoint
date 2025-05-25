@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Question.Queries.GetAllQuestionByLevel;
 
-public class QuestionOptionResponse
+/*public class QuestionOptionResponse
 {
     public long Id { get; set; }
     public string English { get; set; }
     public string Turkish { get; set; }
-} 
+} */
