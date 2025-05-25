@@ -14,5 +14,12 @@ public class GetAllQuestionByLevelResponse
     public string Level { get; set; }
     public string PartOfSpeech { get; set; }
     public List<QuestionOptionResponse> Options { get; set; }
-    public long CorrectAnswerId { get; set; }
+    public int CorrectAnswerId { get; set; }
+}
+
+public class QuestionOptionResponse
+{
+    public long Id { get; set; }
+    public string English { get; set; }
+    public string Turkish { get; set; }
 }
