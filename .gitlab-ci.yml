@@ -19,6 +19,8 @@ build:
 
 deploy:
   stage: deploy
+  before_script: 
+    - cd WebApi
   image: docker:latest
   services:
     - docker:dind
