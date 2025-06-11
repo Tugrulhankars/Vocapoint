@@ -11,21 +11,18 @@ variables:
 build:
   stage: build
   before_script:
+    - cd WebApi
     - dotnet restore
   script:
     - dotnet build
     - echo "build işlemi gerçekleşti"
-    
 
 deploy:
   stage: deploy
-  #before_script: 
-   # - cd WebApi
   image: docker:latest
   services:
     - docker:dind
   script:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - cd WebApi
     - docker build -t $IMAGE_NAME:$TAG .
     - docker push $IMAGE_NAME:$TAG
