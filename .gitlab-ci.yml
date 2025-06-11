@@ -15,6 +15,7 @@ build:
   script:
     - dotnet build
     - echo "build işlemi gerçekleşti"
+    
 
 deploy:
   stage: deploy
