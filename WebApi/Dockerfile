@@ -7,10 +7,13 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-# 🔥 Projenin tüm dosyalarını kopyala (csproj + tüm source kod)
-COPY . .
+COPY WebApi/ WebApi/
+COPY Application/ Application/
+COPY Core/ Core/
+COPY Domain/ Domain/
+COPY Persistance/ Persistance/
 
-#WORKDIR "/src/WebApi"
+WORKDIR /src/WebApi
 RUN dotnet restore "WebApi.csproj"
 RUN dotnet build "WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
@@ -21,5 +24,4 @@ RUN dotnet publish "WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:Us
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
 ENTRYPOINT ["dotnet", "WebApi.dll"]
